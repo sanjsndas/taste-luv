@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasteluv — Cookie Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-berry-pink: #EC407A;
+            --soft-vanilla: #FFF3E0;
+            --rich-cocoa-brown: #5D4037;
+            --text-color: #333;
+            --light-gray: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--soft-vanilla);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--warm-berry-pink);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        nav {
+            background-color: var(--rich-cocoa-brown);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--soft-vanilla);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--warm-berry-pink);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cookies-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--warm-berry-pink);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cookies-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--rich-cocoa-brown);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--warm-berry-pink);
+            padding-bottom: 0.5rem;
+        }
+
+        .cookies-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--rich-cocoa-brown);
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .cookies-content p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .cookies-content ul {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .cookies-content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .cookies-content ol {
+            list-style: decimal;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .cookies-content ol li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .cookies-content strong {
+            color: var(--warm-berry-pink);
+        }
+
+        .cookies-content .important-note {
+            background-color: var(--light-gray);
+            border-left: 5px solid var(--warm-berry-pink);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Cookie Consent Dialogue Box */
+        .cookie-consent-box {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--rich-cocoa-brown);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateY(100%); /* Start hidden below screen */
+            transition: transform 0.5s ease-out;
+        }
+
+        .cookie-consent-box.show {
+            transform: translateY(0); /* Slide up */
+        }
+
+        .cookie-consent-box p {
+            margin: 0;
+            flex-grow: 1;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .cookie-consent-box p a {
+            color: var(--warm-berry-pink);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .cookie-consent-box .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cookie-consent-box button {
+            background-color: var(--warm-berry-pink);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookie-consent-box button:hover {
+            background-color: #d1306a;
+            transform: translateY(-2px);
+        }
+
+        .cookie-consent-box button#decline-cookies {
+            background-color: transparent;
+            border: 2px solid var(--warm-berry-pink);
+            color: var(--warm-berry-pink);
+        }
+
+        .cookie-consent-box button#decline-cookies:hover {
+            background-color: var(--warm-berry-pink);
+            color: white;
+        }
+
+
+        footer {
+            background-color: var(--rich-cocoa-brown);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--soft-vanilla);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-berry-pink);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links ul li {
+            margin: 0 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .cookies-content h2 {
+                font-size: 2.8rem;
+            }
+
+            .cookies-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .cookies-content h4 {
+                font-size: 1.4rem;
+            }
+
+            .cookie-consent-box {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .cookie-consent-box .buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cookie-consent-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tasteluv</h1>
+        <p>Where Every Bite Feels Like Home</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html" class="active">Cookies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="cookies-content">
+            <h2>Tasteluv Cookie Policy</h2>
+            <p class="important-note">
+                <strong>Important Note:</strong> This Cookie Policy is a placeholder and has been generated for demonstration purposes only. It is not legally binding and should not be used as an actual cookie policy for your website. You must consult with a qualified legal professional to draft a comprehensive, accurate, and legally compliant cookie policy tailored to your specific cookie usage and applicable laws (e.g., GDPR, ePrivacy Directive, CCPA).
+            </p>
+
+            <p><strong>Last Updated:</strong> July 8, 2025</p>
+
+            <h3>1. What are Cookies?</h3>
+            <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the owners of the site. Think of them as tiny memory aids for your browser, helping the website remember you and your preferences for a smoother, more personalized experience. They play a crucial role in modern web browsing, enabling many of the features we've come to expect from online services.</p>
+
+            <p>Cookies perform various functions, such as remembering your login details, storing items in your shopping cart, or helping us understand how you interact with our content. They can be "session cookies" which are temporary and deleted when you close your browser, or "persistent cookies" which remain on your device for a set period or until you delete them. This distinction is important because persistent cookies allow websites to remember your preferences or actions across multiple visits, enhancing continuity.</p>
+
+            <h3>2. How Tasteluv Uses Cookies – Our Culinary Digital Helpers</h3>
+            <p>At Tasteluv, we use cookies to enhance your experience, make our Site more intuitive, and understand how our heartwarming recipes and stories resonate with you. Our use of cookies is always aimed at improving your journey with us, ensuring that every visit feels as cozy and welcoming as possible. We categorize our cookies to provide clarity on their purpose, ensuring transparency in our digital practices. We believe that just as every ingredient serves a purpose in a recipe, every cookie on our site has a specific role in enhancing your experience.</p>
+
+            <p>Here are 40 detailed points explaining how and why Tasteluv uses cookies, categorized for clarity:</p>
+
+            <h4>2.1. Strictly Necessary Cookies (The Essential Ingredients)</h4>
+            <p>These cookies are fundamental for the operation of our Site. Without them, core functionalities would not work. They are typically set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in, or filling in forms. They do not store any personally identifiable information and are essential for a smooth browsing experience. Think of them as the flour and water of our website – absolutely vital for the structure.</p>
+            <ol>
+                <li><strong>Enabling Basic Navigation:</strong> These cookies allow you to move around the website and use essential features like accessing secure areas of the site. Without them, navigating Tasteluv would be clunky and frustrating, akin to trying to bake without a mixing bowl.</li>
+                <li><strong>User Authentication:</strong> When you log into your Tasteluv account, these cookies remember your login status, so you don't have to re-enter your credentials on every page. This creates a seamless and secure personalized experience for registered users.</li>
+                <li><strong>Maintaining Session State:</strong> They keep track of your active session, ensuring that your interactions with the site are consistent as you move from one page to another. This is crucial for maintaining context, such as if you're in the middle of generating a recipe journal.</li>
+                <li><strong>Security Measures:</strong> These cookies help us detect and prevent security threats, such as unauthorized access attempts or fraudulent activities, contributing to a safer environment for all our users. They act as a digital lock on our culinary pantry.</li>
+                <li><strong>Load Balancing:</strong> They help distribute network traffic across multiple servers to ensure the website remains responsive and performs optimally, especially during peak usage times. This ensures a smooth flow of data, like a perfectly balanced recipe.</li>
+                <li><strong>Cookie Consent Management:</strong> This cookie specifically remembers your preference regarding cookie consent, so you don't have to see the consent banner repeatedly once you've made a choice. It respects your decision and avoids unnecessary interruptions.</li>
+                <li><strong>Form Submission Functionality:</strong> When you fill out forms (e.g., contact forms, recipe submission forms), these cookies ensure that your data is correctly processed and submitted. They are the digital pen that ensures your message gets through.</li>
+                <li><strong>Preventing Cross-Site Request Forgery (CSRF):</strong> These cookies help protect against certain types of cyberattacks by ensuring that requests made to the server are legitimate and originate from our website, not malicious external sources.</li>
+                <li><strong>Accessibility Preferences:</strong> If you set any accessibility preferences (e.g., high contrast mode), a necessary cookie might store this preference to ensure your chosen settings persist across pages.</li>
+                <li><strong>Shopping Cart Functionality (if applicable):</strong> If Tasteluv were to introduce a store, these cookies would temporarily store items you add to your shopping cart as you browse, allowing for a seamless checkout process.</li>
+            </ol>
+
+            <h4>2.2. Performance Cookies (The Taste Testers)</h4>
+            <p>These cookies collect information about how you use our website, such as which pages you visit most often, and if you encounter any error messages. This data is aggregated and anonymized, meaning it cannot be used to identify you personally. The information helps us improve the way our website works and understand what content our community finds most engaging. They are like our digital taste testers, helping us refine our recipes for a better experience.</p>
+            <ol start="11">
+                <li><strong>Website Analytics:</strong> We use these cookies to gather data on website traffic, popular content, and user navigation paths. This helps us understand what's working well and what needs improvement on our site, much like understanding which recipes are most loved.</li>
+                <li><strong>Page Load Time Monitoring:</strong> These cookies help us measure how quickly pages load, allowing us to optimize our site's performance and ensure a swift browsing experience. A fast site is a happy site, just like a quick meal prep.</li>
+                <li><strong>Error Reporting:</strong> When technical issues occur, performance cookies can help us identify and diagnose problems, allowing us to fix them quickly and minimize disruption to your experience. They are our digital troubleshooters.</li>
+                <li><strong>User Flow Analysis:</strong> By tracking the sequence of pages visited, we can analyze typical user journeys, helping us optimize the site's structure and content flow for intuitive navigation. This is like mapping out the perfect cooking process.</li>
+                <li><strong>Content Popularity Tracking:</strong> These cookies help us identify which recipes, blog posts, or interactive features are most popular, guiding our content creation efforts to deliver more of what you love.</li>
+                <li><strong>Device and Browser Compatibility:</strong> They provide insights into the types of devices and browsers our users are employing, allowing us to ensure our site is optimized for a wide range of technologies.</li>
+                <li><strong>A/B Testing:</strong> Sometimes, we might test different versions of a page or feature to see which performs better. Performance cookies help us measure the effectiveness of these tests without affecting your personal data.</li>
+                <li><strong>Identifying User Segments (Anonymized):</strong> While not identifying individuals, these cookies can help us group users based on their browsing behavior (e.g., "baking enthusiasts" vs. "comfort food seekers") to understand audience segments.</li>
+                <li><strong>Conversion Tracking (Anonymized):</strong> If we have specific goals (e.g., newsletter sign-ups), these cookies help us measure how many users complete these actions, allowing us to refine our calls to action.</li>
+                <li><strong>Server Performance Monitoring:</strong> Beyond individual page loads, these cookies contribute to overall server health monitoring, ensuring our infrastructure can handle user demand efficiently.</li>
+            </ol>
+
+            <h4>2.3. Functionality Cookies (The Personalized Touches)</h4>
+            <p>Functionality cookies allow our website to remember choices you make (such as your username, language, or the region you are in) and provide enhanced, more personal features. For instance, they can remember changes you have made to text size, fonts, and other customizable parts of web pages. They can also be used to provide services you have asked for, such as watching a video or commenting on a blog. The information these cookies collect may be anonymized and they cannot track your browsing activity on other websites. They add the special, heartfelt touches to your Tasteluv experience, making it truly feel like home.</p>
+            <ol start="21">
+                <li><strong>Remembering User Preferences:</strong> These cookies store your chosen settings, like your preferred language or display options, so you don't have to reset them on subsequent visits. It's like remembering how you take your coffee.</li>
+                <li><strong>Personalized Content Display:</strong> Based on your past interactions, these cookies can help us suggest recipes or articles that align with your interests, making your content feed more relevant.</li>
+                <li><strong>Login Persistence:</strong> If you choose "Remember Me" when logging in, a functionality cookie keeps you logged in for a set period, saving you the hassle of re-entering credentials.</li>
+                <li><strong>Comment Section Functionality:</strong> If you leave a comment on our blog, these cookies can remember your name and email address for your next comment, making the process quicker.</li>
+                <li><strong>Interactive Feature Memory:</strong> For tools like the "Tasteluv Journal Generator," these cookies might remember your progress or previous entries, allowing you to pick up where you left off.</li>
+                <li><strong>Video Playback Preferences:</strong> If we embed videos, these cookies might remember your volume settings or playback position.</li>
+                <li><strong>Regional Settings:</strong> If we offer content specific to certain regions, these cookies can remember your location preference to serve you relevant content.</li>
+                <li><strong>Customizable Layouts:</strong> Should we offer customizable page layouts, these cookies would store your preferred arrangement of elements.</li>
+                <li><strong>User-Generated Content Submission:</strong> They facilitate the smooth submission of user-generated content like recipes or stories, ensuring your contributions are correctly attributed and saved.</li>
+                <li><strong>Social Media Integration:</strong> If you interact with embedded social media feeds or sharing buttons, these cookies enable that functionality and remember your preferences for those platforms.</li>
+            </ol>
+
+            <h4>2.4. Targeting / Advertising Cookies (The Recipe Promoters)</h4>
+            <p>These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaigns. They are usually placed by advertising networks with the website operator’s permission. They remember that you have visited a website and this information is shared with other organizations such as advertisers. Quite often, targeting or advertising cookies will be linked to site functionality provided by the other organization. We aim for advertising that feels like a gentle suggestion, not an interruption, aligning with our brand's warm and inviting nature.</p>
+            <ol start="31">
+                <li><strong>Delivering Relevant Advertisements:</strong> These cookies help us show you ads that are more likely to be of interest to you, based on your browsing habits on Tasteluv and other sites.</li>
+                <li><strong>Limiting Ad Frequency:</strong> They prevent you from seeing the same advertisement too many times, improving your browsing experience.</li>
+                <li><strong>Measuring Ad Campaign Effectiveness:</strong> These cookies help us track how well our advertising campaigns are performing, allowing us to optimize our marketing efforts.</li>
+                <li><strong>Retargeting:</strong> If you've shown interest in a particular type of content (e.g., baking), these cookies might help us show you relevant ads for baking products or classes on other websites.</li>
+                <li><strong>Affiliate Marketing Tracking:</strong> If we partner with other brands, these cookies track referrals from Tasteluv to our partners' sites, ensuring proper attribution for any sales generated.</li>
+                <li><strong>Audience Segmentation for Advertising:</strong> They help advertising platforms create anonymized audience segments based on interests, allowing advertisers to reach specific groups without identifying individuals.</li>
+                <li><strong>Cross-Device Tracking (Aggregated):</strong> In some cases, these cookies might help advertisers understand user behavior across different devices (e.g., starting on mobile, finishing on desktop) to optimize ad delivery, but always in an aggregated, non-identifiable way.</li>
+                <li><strong>Social Media Advertising:</strong> If we run campaigns on social media platforms, these cookies help us measure the impact of those campaigns and target relevant users on those platforms.</li>
+                <li><strong>Personalized Recommendations:</strong> Beyond ads, these cookies can contribute to personalized content recommendations on our site, suggesting recipes or articles based on inferred interests.</li>
+                <li><strong>Understanding User Demographics (for Advertising):</strong> While not directly identifying, these cookies can contribute to aggregated demographic insights used by advertisers to better understand their target audience.</li>
+            </ol>
+
+            <h3>3. Third-Party Cookies</h3>
+            <p>In addition to our own cookies, we may also use various third-parties cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on. These third parties include, but are not limited to, Google Analytics for website performance tracking, and potentially advertising partners. We choose our partners carefully, ensuring they align with our commitment to user privacy. We encourage you to review the privacy policies of these third parties for more information on their data practices.</p>
+
+            <h3>4. Your Choices Regarding Cookies – Your Kitchen, Your Rules</h3>
+            <p>You have the power to decide whether to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This might prevent you from taking full advantage of the website. Think of it as adjusting the settings on your oven – you have control over how things are cooked.</p>
+
+            <h4>4.1. Managing Cookies Through Your Browser</h4>
+            <p>You can manage cookies directly through your web browser settings. Each browser offers different methods for controlling cookies. Here's a general guide:</p>
+            <ul>
+                <li><strong>Google Chrome:</strong> Go to Settings > Privacy and security > Site Settings > Cookies and site data.</li>
+                <li><strong>Mozilla Firefox:</strong> Go to Options > Privacy & Security > Cookies and Site Data.</li>
+                <li><strong>Microsoft Edge:</strong> Go to Settings > Privacy, search, and services > Clear browsing data or Cookies and site permissions.</li>
+                <li><strong>Safari:</strong> Go to Preferences > Privacy.</li>
+            </ul>
+            <p>You can typically:</p>
+            <ul>
+                <li>Delete all cookies.</li>
+                <li>Block all cookies.</li>
+                <li>Allow all cookies.</li>
+                <li>Block third-party cookies.</li>
+                <li>Clear specific cookies.</li>
+                <li>Receive a notification before a cookie is set.</li>
+            </ul>
+            <p>Please note that if you choose to disable cookies, some features of our Site may not function as intended. For example, you might not be able to log in, save preferences, or use interactive tools effectively. This is because many functionalities rely on cookies to remember your actions and settings.</p>
+
+            <h4>4.2. Opt-Out of Specific Services</h4>
+            <p>Some third-party services that use cookies offer their own opt-out mechanisms. For example:</p>
+            <ul>
+                <li><strong>Google Analytics:</strong> You can install the Google Analytics opt-out browser add-on to prevent your data from being used by Google Analytics.</li>
+                <li><strong>Ad Networks:</strong> Many advertising networks are part of initiatives like the Network Advertising Initiative (NAI) or the Digital Advertising Alliance (DAA), which offer centralized opt-out tools for participating companies.</li>
+            </ul>
+            <p>We encourage you to explore these options if you wish to have more granular control over specific types of cookies.</p>
+
+            <h3>5. Changes to This Cookie Policy</h3>
+            <p>Tasteluv has the discretion to update this Cookie Policy at any time. When we do, we will revise the "last updated" date at the top of this page. We encourage Users to frequently check this page for any changes to stay informed about how we are using cookies. You acknowledge and agree that it is your responsibility to review this Cookie Policy periodically and become aware of modifications. Significant changes will be communicated through a prominent notice on our Site or via email (if you have provided your email address and opted-in to receive such notifications). We believe in transparent communication, just like a clear recipe, so you always know what's cooking.</p>
+
+            <h3>6. Contacting Us</h3>
+            <p>If you have any questions about this Cookie Policy, the practices of this site, or your dealings with this site, please do not hesitate to contact us. We are here to provide clarity and address any concerns you may have regarding our cookie usage. Your peace of mind is important to us.</p>
+            <p>You can reach us via:</p>
+            <address>
+                Tasteluv Headquarters<br>
+                123 Comfort Food Lane<br>
+                Homely City, State 12345<br>
+                Country (e.g., India)<br>
+                Email: <a href="mailto:privacy@tasteluv.com">privacy@tasteluv.com</a><br>
+                Phone: +1 (555) 123-4567
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="cookies.html">Cookie Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 Tasteluv. All rights reserved. Where Every Bite Feels Like Home.</p>
+        <address>
+            Tasteluv Headquarters<br>
+            123 Comfort Food Lane<br>
+            Homely City, State 12345<br>
+            Country (e.g., India)<br>
+            Email: <a href="mailto:info@tasteluv.com">info@tasteluv.com</a><br>
+            Phone: +1 (555) 789-0123
+        </address>
+    </footer>
+
+    <!-- Cookie Consent Dialogue Box -->
+    <div id="cookieConsentBox" class="cookie-consent-box">
+        <p>We use cookies to enhance your browsing experience and analyze our site traffic. By clicking "Accept All," you consent to our use of cookies as described in our <a href="cookies.html">Cookie Policy</a>.</p>
+        <div class="buttons">
+            <button id="accept-cookies">Accept All</button>
+            <button id="decline-cookies">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsentBox = document.getElementById('cookieConsentBox');
+            const acceptButton = document.getElementById('accept-cookies');
+            const declineButton = document.getElementById('decline-cookies');
+
+            // Check if user has already made a choice
+            const hasAcceptedCookies = localStorage.getItem('tasteluv_cookies_accepted');
+
+            if (hasAcceptedCookies === null) {
+                // If no choice, show the box after a short delay
+                setTimeout(() => {
+                    cookieConsentBox.classList.add('show');
+                }, 500); // Small delay for smoother animation
+            } else if (hasAcceptedCookies === 'true') {
+                // User has accepted, you might enable analytics scripts here
+                console.log('User previously accepted cookies.');
+            } else {
+                // User has declined, you might disable non-essential scripts here
+                console.log('User previously declined cookies.');
+                // In a real application, you would disable analytics, tracking, and advertising scripts here.
+                // For this demonstration, we just hide the banner.
+            }
+
+            acceptButton.addEventListener('click', function() {
+                localStorage.setItem('tasteluv_cookies_accepted', 'true');
+                cookieConsentBox.classList.remove('show');
+                console.log('Cookies accepted!');
+                // In a real application, you would now load/enable analytics, tracking, etc.
+            });
+
+            declineButton.addEventListener('click', function() {
+                localStorage.setItem('tasteluv_cookies_accepted', 'false');
+                cookieConsentBox.classList.remove('show');
+                console.log('Cookies declined!');
+                // In a real application, you would ensure non-essential cookies are not set.
+                // This might involve reloading the page or dynamically disabling scripts.
+            });
+        });
+    </script>
+</body>
+</html>
